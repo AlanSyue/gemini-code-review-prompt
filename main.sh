@@ -12,7 +12,7 @@ if ! git rev-parse --quiet --verify "${commit_sha}^{commit}" > /dev/null; then
   exit 1
 fi
 
-prompt="請協助我審查這次的程式碼變更（從 ${commit_sha} 到 HEAD），請指出：
+prompt="請協助我審查這次的程式碼變更（使用 git diff ${commit_sha}~1..HEAD），請先列出你看了哪些 commit，再指出：
 - 潛在錯誤或邏輯問題
 - 命名與可讀性問題
 - 程式結構是否清晰、是否符合良好設計原則
